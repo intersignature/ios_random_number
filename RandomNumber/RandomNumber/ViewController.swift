@@ -35,41 +35,32 @@ class ViewController: UIViewController {
     let unPresscolor = UIColor.green
     
     @IBAction func onN1BtnPress(_ sender: UIButton) {
-        checkPressNBtn(btnPress: n1Btn, numVal: 1)
+        checkPressNBtn(btnPress: checkWhichBtn(TagBtn: sender.tag), numVal: sender.tag)
+    }
+    
+    func checkWhichBtn(TagBtn:Int) -> UIButton! {
+        if TagBtn == 1 {
+            return n1Btn
+        }else if TagBtn == 2 {
+            return n2Btn
+        }else if TagBtn == 3 {
+            return n3Btn
+        }else if TagBtn == 4 {
+            return n4Btn
+        }else if TagBtn == 5 {
+            return n5Btn
+        }else if TagBtn == 6 {
+            return n6Btn
+        }else if TagBtn == 7 {
+            return n7Btn
+        }else if TagBtn == 8 {
+            return n8Btn
+        }else if TagBtn == 9 {
+            return n9Btn
+        }
+        return nil
     }
 
-    @IBAction func onN2BtnPress(_ sender: UIButton) {
-        checkPressNBtn(btnPress: n2Btn, numVal: 2)
-    }
-    
-    @IBAction func onN3BtnPress(_ sender: UIButton) {
-        checkPressNBtn(btnPress: n3Btn, numVal: 3)
-    }
-    
-    @IBAction func onN4BtnPress(_ sender: UIButton) {
-        checkPressNBtn(btnPress: n4Btn, numVal: 4)
-    }
-    
-    @IBAction func onN5BtnPress(_ sender: UIButton) {
-        checkPressNBtn(btnPress: n5Btn, numVal: 5)
-    }
-    
-    @IBAction func onN6BtnPress(_ sender: UIButton) {
-        checkPressNBtn(btnPress: n6Btn, numVal: 6)
-    }
-    
-    @IBAction func onN7BtnPress(_ sender: UIButton) {
-        checkPressNBtn(btnPress: n7Btn, numVal: 7)
-    }
-    
-    @IBAction func onN8BtnPress(_ sender: UIButton) {
-        checkPressNBtn(btnPress: n8Btn, numVal: 8)
-    }
-    
-    @IBAction func onN9BtnPress(_ sender: UIButton) {
-        checkPressNBtn(btnPress: n9Btn, numVal: 9)
-    }
-    
     func checkPressNBtn(btnPress: UIButton, numVal: Int) {
         if randomArray[currentPos] == numVal {
             btnPress.backgroundColor = pressedColor
